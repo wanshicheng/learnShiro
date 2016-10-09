@@ -1,4 +1,5 @@
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+package org.wanshicheng.jdbcRealm;
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.config.IniSecurityManagerFactory;
@@ -26,7 +27,7 @@ public class JdbcRealmTest {
     @Test
     public void test() {
         // 1.获取SecurityManager工厂，此处使用ini配置文件初始化SecurityManager
-        Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
+        Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.jdbc.ini");
         // 2.获取SecurityManager实例，并绑定到SecurityUtils
         SecurityManager sm = factory.getInstance();
         SecurityUtils.setSecurityManager(sm);
